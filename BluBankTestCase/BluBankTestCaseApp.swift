@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct BluBankTestCaseApp: App {
+    
+    let viewModel = CountriesViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                SelectedCountryListView()
+            }.navigationViewStyle(StackNavigationViewStyle())
+                .environmentObject(viewModel)
         }
     }
 }
