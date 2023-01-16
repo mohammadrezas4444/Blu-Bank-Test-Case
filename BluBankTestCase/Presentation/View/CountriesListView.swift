@@ -34,10 +34,10 @@ struct CountriesListView: View {
     
     private func countryList() -> some View {
         List {
-            ForEach(searchResults) { element in
-                countryView(element) {
-                    if let index = viewModel.countries.firstIndex(of: element) {
-                        viewModel.countries[index].isSelected = !element.isSelected
+            ForEach(searchResults) { country in
+                countryView(country) {
+                    if let index = viewModel.countries.firstIndex(of: country) {
+                        viewModel.countries[index].isSelected = !country.isSelected
                     }
                 }
                 

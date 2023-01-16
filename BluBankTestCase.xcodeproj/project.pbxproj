@@ -19,6 +19,8 @@
 		90EFB8682975DB4200B5F229 /* CountriesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EFB8652975DB4200B5F229 /* CountriesApi.swift */; };
 		90EFB8692975DB4200B5F229 /* InMemoryCountriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EFB8662975DB4200B5F229 /* InMemoryCountriesRepository.swift */; };
 		90EFB86C2975E83B00B5F229 /* SelectedCountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EFB86B2975E83B00B5F229 /* SelectedCountryListView.swift */; };
+		90EFB86F297618E500B5F229 /* ApiServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EFB86E297618E500B5F229 /* ApiServiceError.swift */; };
+		90EFB8712976191D00B5F229 /* UseCaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EFB8702976191D00B5F229 /* UseCaseError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		90EFB8652975DB4200B5F229 /* CountriesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesApi.swift; sourceTree = "<group>"; };
 		90EFB8662975DB4200B5F229 /* InMemoryCountriesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryCountriesRepository.swift; sourceTree = "<group>"; };
 		90EFB86B2975E83B00B5F229 /* SelectedCountryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCountryListView.swift; sourceTree = "<group>"; };
+		90EFB86E297618E500B5F229 /* ApiServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceError.swift; sourceTree = "<group>"; };
+		90EFB8702976191D00B5F229 /* UseCaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 		90CE4D732975D754002ADB9B /* BluBankTestCase */ = {
 			isa = PBXGroup;
 			children = (
+				90EFB86D297618D200B5F229 /* Common */,
 				90EFB8582975DA3A00B5F229 /* Presentation */,
 				90EFB8572975DA3600B5F229 /* Domain */,
 				90EFB8562975DA3100B5F229 /* Data */,
@@ -137,6 +142,15 @@
 				90EFB8622975DB3A00B5F229 /* GetCountriesUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		90EFB86D297618D200B5F229 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				90EFB86E297618E500B5F229 /* ApiServiceError.swift */,
+				90EFB8702976191D00B5F229 /* UseCaseError.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,11 +225,13 @@
 			files = (
 				90EFB85D2975DB2900B5F229 /* CountriesViewModel.swift in Sources */,
 				90EFB8612975DB3300B5F229 /* CountriesRepository.swift in Sources */,
+				90EFB86F297618E500B5F229 /* ApiServiceError.swift in Sources */,
 				90CE4D772975D754002ADB9B /* CountriesListView.swift in Sources */,
 				90EFB8692975DB4200B5F229 /* InMemoryCountriesRepository.swift in Sources */,
 				90EFB8682975DB4200B5F229 /* CountriesApi.swift in Sources */,
 				90CE4D752975D754002ADB9B /* BluBankTestCaseApp.swift in Sources */,
 				90EFB8602975DB3300B5F229 /* Model.swift in Sources */,
+				90EFB8712976191D00B5F229 /* UseCaseError.swift in Sources */,
 				90EFB8672975DB4200B5F229 /* Dto.swift in Sources */,
 				90EFB86C2975E83B00B5F229 /* SelectedCountryListView.swift in Sources */,
 				90EFB8632975DB3A00B5F229 /* GetCountriesUseCase.swift in Sources */,

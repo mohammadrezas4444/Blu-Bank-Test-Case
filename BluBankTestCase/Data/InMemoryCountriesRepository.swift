@@ -7,14 +7,9 @@
 
 import Foundation
 
-enum APIServiceError: Error{
-    case badUrl, requestError, decodingError, statusNotOK
-}
-
 struct InMemoryCountriesRepository: CountriesRepository {
     
     let countriesApi: CountriesApi
-    var selectedCountries: [Country] = []
     
     func getCountries() async throws -> [Country] {
         return try await countriesApi.getCountries()

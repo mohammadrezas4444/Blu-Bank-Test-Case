@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum UseCaseError: Error{
-    case networkError, decodingError
-}
-
 protocol GetCountriesUseCase {
     func execute() async -> Result<[Country], UseCaseError>
 }
@@ -22,8 +18,10 @@ struct GetCountries: GetCountriesUseCase {
     func execute() async -> Result<[Country], UseCaseError> {
         
         do {
+            
             let countries = try await repo.getCountries()
             return .success(countries)
+            
         } catch(let error) {
             
             switch error {
@@ -32,6 +30,7 @@ struct GetCountries: GetCountriesUseCase {
             default:
                 return .failure(.networkError)
             }
+            
         }
     }
 }
