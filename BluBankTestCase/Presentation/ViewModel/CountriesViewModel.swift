@@ -18,6 +18,7 @@ class CountriesViewModel: ObservableObject {
     
     private var countriesChangeCanceller: AnyCancellable?
     
+    @MainActor
     func getCountries() async {
         let result = await getCountriesUseCase.execute()
         switch result {

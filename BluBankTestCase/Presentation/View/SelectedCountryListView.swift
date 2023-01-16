@@ -15,7 +15,6 @@ struct SelectedCountryListView: View {
         HStack {
             Image(systemName: "checkmark.circle")
                 .foregroundColor(.green)
-                .transition(.scale.animation(.easeOut))
             Text("\(country.name)")
         }
     }
@@ -33,7 +32,7 @@ struct SelectedCountryListView: View {
     private func selectCountry() -> some View {
         VStack {
             NavigationLink(destination: CountriesListView().environmentObject(viewModel)) {
-                Text("Show Countries!")
+                Text("Select Countries!")
             }
         }
         .padding()
@@ -43,12 +42,10 @@ struct SelectedCountryListView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                countryList()
-                selectCountry()
-            }
-        }.navigationBarTitle("Selected Country")
+        VStack {
+            selectCountry().padding()
+            countryList()
+        }
     }
 }
 

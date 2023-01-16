@@ -10,6 +10,15 @@ import SwiftUI
 struct CountriesListView: View {
     
     @EnvironmentObject var viewModel: CountriesViewModel
+    @State private var searchText = ""
+    
+    var searchResults: [Country] {
+        if searchText.isEmpty {
+            return viewModel.countries
+        } else {
+            return viewModel.countries.filter { $0.name.contains(searchText) }
+        }
+    }
     
     private func countryView(_ country: Country, onSelect: @escaping () -> Void) -> some View {
         HStack {
@@ -25,12 +34,18 @@ struct CountriesListView: View {
     
     private func countryList() -> some View {
         List {
-            ForEach(Array(viewModel.countries.enumerated()), id: \.element) { index, element in
+            ForEach(searchResults) { element in
                 countryView(element) {
-                    viewModel.countries[index].isSelected = !element.isSelected
+                    if let index = viewModel.countries.firstIndex(of: element) {
+                        viewModel.countries[index].isSelected = !element.isSelected
+                    }
                 }
+                
             }
+        }.refreshable {
+            await viewModel.getCountries()
         }
+        .searchable(text: $searchText, prompt: "Look for something")
         .navigationTitle("Country List")
         .task {
             if viewModel.countries.isEmpty {
